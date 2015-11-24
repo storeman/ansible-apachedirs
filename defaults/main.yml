@@ -1,0 +1,40 @@
+---
+apache_rules:
+  - src: files/compression.conf
+    name: compression.conf
+  - src: files/content_transform.conf
+    name: content_transform.conf
+  - src: files/cors_images.conf
+    name: cors_images.conf
+  - src: files/cors_timing.conf
+    name: cors_timing.conf
+  - src: files/cors_web_fonts.conf
+    name: cors_web_fonts.conf
+  - src: files/cors.conf
+    name: cors.conf
+  - src: files/etag.conf
+    name: etag.conf
+  - src: files/expires.conf
+    name: expires.conf
+  - src: files/file_concatenation.conf
+    name: file_concatenation.conf
+  - src: files/filename_based_cache_busting.conf
+    name: filename_based_cache_busting.conf
+  - src: files/ie_cookies.conf
+    name: ie_cookies.conf
+  - src: files/ie_edge.conf
+    name: ie_edge.conf
+  - src: files/mimes.conf
+    name: mimes.conf
+  - src: files/security_file_access.conf
+    name: security_file_access.conf
+  - src: files/security_hsts.conf
+    name: security_hsts.conf
+  - src: files/security_signiture.conf
+    name: security_signiture.conf
+  - src: files/security_technology.conf
+    name: security_technology.conf
+  - src: files/ssl.conf
+    name: ssl.conf
+  - src: files/utf8.conf
+    name: utf8.conf
