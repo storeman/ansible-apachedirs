@@ -1,7 +1,16 @@
 ---
-- name: Create document roots
+
+- name: Stat document roots
   file: path={{item.documentroot}} owner=www-data group=www-data state=directory recurse=yes
+  register: document_root_stats
   with_items: "{{ apache_vhosts + apache_vhosts_ssl }}"
+
+- name: Create document roots
+  file: path={{item.0.documentroot}} owner=www-data group=www-data state=directory recurse=yes
+  when: item.1.stat.exists is defined and item.1.stat.exists != True
+  with_together:
+    - "{{ apache_vhosts + apache_vhosts_ssl }}"
+    - document_root_stats
 
 - name: Create php tmp dir
   file: path={{ php_tmp }} owner=www-data group=www-data state=directory
