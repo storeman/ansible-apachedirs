@@ -1,7 +1,7 @@
 ---
 
 - name: Stat document roots
-  file: path={{item.documentroot}} owner=www-data group=www-data state=directory recurse=yes
+  stat: path={{item.documentroot}}
   register: document_root_stats
   with_items: "{{ apache_vhosts + apache_vhosts_ssl }}"
 
